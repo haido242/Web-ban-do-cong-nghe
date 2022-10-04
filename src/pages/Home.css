@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;1,100;1,200;1,300;1,500&display=swap');
+.menu-item {
+margin-right: 15px;
+padding: 8px 12px;
+}
+.menu-item:hover a {
+color: #3452ff;
+}
+
+.home {
+position: relative;
+}
+.home .home-content {
+    color: #fff;
+position: absolute;
+top: 10%;
+left: 10%;
+}
+.home .home-content h1 {
+font-size: 55px;
+font-weight: 300;
+}
+.home .home-content button {
+    color: #fff;
+    margin-top: 20px;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(52 82 255);
+    transition: all 0.5s ease-in-out;
+
+}
+.home .home-content button:hover{
+    color: #000;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+
+}
+.home-thumbnail img{
+    max-width: 100%;
+}
+.section-2 {
+    height: 250px;
+    /* background: url(./assets/img/section-2/subtle_dots-95-5-2.jpg); */
+    background-repeat: repeat;
+    display: flex;
+}
+
+.section-2-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-2-items {
+    display: flex;
+    padding: 40px 28px;
+    background-color: #fff;
+    border: 1px solid #cccc;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.section-2 i {
+    padding-right: 18px;
+    font-size: 40px;
+    color: #3452ff;
+}
+
+.section-2-item-sub h3 {
+    font-weight: 500;
+}
+
+.section-2-item-sub p {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.section-3-sub-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.section-3-sub-1 img {
+    width: 458px;
+    height: 260px;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.section-3-sub-1 .item-1,
+.section-3-sub-1 .item-2 {
+    position: relative;
+}
+
+.item-1-sub {
+    position: absolute;
+    top: 48px;
+    left: 56px;
+}
+
+.section-3-sub-1 .item-1 {
+    margin-left: 110px;
+}
+
+.section-3-sub-1 .item-1:hover,
+.section-3-sub-1 .item-2:hover {
+    cursor: pointer;
+}
+
+.section-3-sub-1 .item-1:hover img,
+.section-3-sub-1 .item-2:hover img {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.section-3-sub-1 .item-2 {
+    margin-right: 110px;
+}
+
+.section-3-sub-1 .items-1-sub-heading {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.section-3-sub-1 .items-1-sub-title {
+    font-size: 32px;
+    color: #fff;
+    font-weight: 300;
+}
+
+.section-3-sub-1 p {
+    margin-top: 12px;
+    color: #fff;
+    opacity: 0.5;
+    font-weight: 200;
+}
+
+.section-3-sub-1 .item-1-sub-coin {
+    margin-top: 6px;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.item-1 .item-1-sub-coin {
+    color: #f9db76;
+}
+
+.item-2 .item-1-sub-coin {
+    color: #fb8aaf;
+}
+
