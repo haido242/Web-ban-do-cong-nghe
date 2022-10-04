@@ -30,4 +30,103 @@ nav{
   width: 100%;
   padding-left: 20%;
 }
+/* common (dung chung) */
+.col-30 {
+  width: 33.3333%;
+}
 
+.col-40 {
+  width: 25%;
+}
+
+.max-width-1160 {
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-width-1000 {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.padding-t60 {
+  padding-top: 60px;
+}
+
+.padding-b60 {
+  padding-bottom: 60px;
+}
+
+.padding-t40 {
+  padding-top: 40px;
+}
+
+.padding-b40 {
+  padding-bottom: 40px;
+}
+
+.padding-r28 {
+  padding-right: 28px;
+}
+
+.padding-t90-b90 {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.padding-l14-r14 {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+.mr-l14-r14 {
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.mr-t60 {
+  margin-top: 60px;
+}
+
+.one-half {
+  width: 47.77%;
+}
+/* sale btn */
+.sale-btn {
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  padding: 6px 20px;
+  color: #fff;
+  background-color: #3452ff;
+  top: 25px;
+  left: 25px;
+  text-transform: uppercase;
+  border-radius: 30px;
+}
+
+/* add to card */
+.add-to-cart-btn {
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 8px 14px;
+  font-weight: 500;
+}
+
+.add-to-cart-btn:hover {
+  border: none;
+  background-color: #2a43d1;
+  color: #fff;
+}
+
+.star-4 i:not(:last-child) {
+  color: #f9db76;
+}
+
+.star-4 i:nth-last-child(1) {
+  color: #ccc;
+}
