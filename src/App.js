@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutUs';
 import ContactPage from './pages/Contact';
 import NewsPage from './pages/News';
 import SalePage from './pages/Sale';
+import AdminPage from './pages/Admin';
 function App() {
   return (
     <div className="App">
@@ -37,6 +38,7 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/sale" element={<SalePage />} />
+        <Route path="/admin" element={<AdminPage />} />
       </Routes>
     </div>
   );

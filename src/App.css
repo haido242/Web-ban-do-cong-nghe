@@ -130,3 +130,6 @@ nav{
 .star-4 i:nth-last-child(1) {
   color: #ccc;
 }
+.temp{
+  height:100px;
+}

@@ -11,19 +11,20 @@ export default function HomeRecoment(){
     .then(data => {
         setProduct(data);
     })
+    .catch(err => console.warn("err in fetch data" + err));
     }, [])
     return (
         <div className="home-recoment">
             {console.log(product)}
-                            <h1>New</h1>
-             <div className="section-3-sub-2 padding-t60">
+                            <h1>New Items</h1>
+            <div className="section-3-sub-2 padding-t60">
                         <div className="max-width-1000 section-3-sub-2-flex" >
                     {product.map((item, index) => 
                         <div className="col-30 "key={index}>
                             <div className="mr-l14-r14">
                                 <div className="section-3-sub-2-items">
                                     <div className="sale-btn">New!</div>
-                                    {/* <img src={item.urlImage}/> */}
+                                    <img src={item.urlImage}/>
                                     <div className="section-3-sub-2-content">
                                         <div className="star">
                                             <i className='bx bxs-star' ></i>
@@ -48,8 +49,9 @@ export default function HomeRecoment(){
                             </div>
                         </div>
                         )}
-                    </div>
                 </div>
+                </div>
+            <div className="temp"></div>
         </div>
     );
 }
