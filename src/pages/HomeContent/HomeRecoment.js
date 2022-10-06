@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
+import ProductApi from "../../api/productApi";
 
 export default function HomeRecoment(){
     const [product, setProduct] = useState([]);
     useEffect(() =>{
-    fetch('https://localhost:7073/api/Product',
-    {method: 'GET',
-    }
-    )
-    .then(res => res.json())
-    .then(data => {
-        setProduct(data);
-    })
-    .catch(err => console.warn("err in fetch data" + err));
+        const fetchProductList = async() =>{
+            try {
+                const productsResponse = await ProductApi.getAll();
+                setProduct(productsResponse);
+            }catch(e){
+                console.log(e);
+            }
+        }
+        fetchProductList();
     }, [])
     return (
         <div className="home-recoment">

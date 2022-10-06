@@ -1,11 +1,14 @@
 import {Routes, Route, Link} from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import './App.css';
+import ProductApi from './api/productApi';
 import HomePage from './pages/Home';
 import AboutPage from './pages/AboutUs';
 import ContactPage from './pages/Contact';
 import NewsPage from './pages/News';
 import SalePage from './pages/Sale';
 import AdminPage from './pages/Admin';
+
 function App() {
   return (
     <div className="App">
