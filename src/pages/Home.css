@@ -210,3 +210,15 @@ font-weight: 300;
 .home-recoment h1 {
     margin-left: 100px;
 }
+.home-recoment .section-3-sub-2-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.new-item{
+    margin-top: 20px;
+}
+.all-product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}

@@ -1,31 +1,41 @@
-import { useEffect, useState } from "react";
-import ProductApi from "../../api/productApi";
-import ButtonViewMoreProduct from ".././components/ButtonViewMoreProduct";
-
-export default function HomeRecoment(){
-    
+import ProductApi from "../api/productApi";
+import './Home.css';
+import { useState, useEffect } from "react";
+export default function ProductPage() {
+    // function ButtonLoadProduct(){
+    //     return (
+    //         <div className="loadProduct">
+    //             <button onClick={loadProduct}>More</button>
+    //         </div>
+    //     )
+    // }
     const [product, setProduct] = useState([]);
     useEffect(() =>{
-        const fetchProductList = async() =>{
-            try {
-                const params = {
-                    PageNumber: 1,
-                    PageSize: 3
-                }
-                const productsResponse = await ProductApi.getAll(params);
-                setProduct(productsResponse.data);
-                console.log(productsResponse.data);
-            }catch(e){
-                console.log(e);
+        const paramPageNumber = 1
+        const paramPageSize = 6
+        // const loadProduct = () =>{
+        //         paramPageSize+=6
+        //         fetchProductList()
+        //     }
+        let fetchProductList = async() =>{
+        try {
+            const params = {
+                PageNumber: paramPageNumber,
+                PageSize: paramPageSize
             }
-            console.log("product: "+product);
-            console.warn(product);
+            const productsResponse = await ProductApi.getAll(params);
+            setProduct(productsResponse.data);
+            console.log(productsResponse.data);
+        }catch(e){
+            console.log(e);
         }
-        fetchProductList();
-    }, [])
+    }
+    fetchProductList()
+    // loadProduct()
+    console.log("product app: "+product);
+}, [])   
     return (
         <div className="home-recoment">
-                            <h1>New Items</h1>
             <div className="section-3-sub-2 padding-t60">
                 <div className="max-width-1000 section-3-sub-2-flex" >
                     {product.map((item, index) => 
@@ -61,7 +71,7 @@ export default function HomeRecoment(){
                 </div>
                 </div>
             <div className="temp"></div>
-            <ButtonViewMoreProduct/>
+            {/* <ButtonLoadProduct/> */}
         </div>
     );
 }
