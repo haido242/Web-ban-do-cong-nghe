@@ -23,9 +23,9 @@ export default function ProductPage() {
                 PageNumber: paramPageNumber,
                 PageSize: paramPageSize
             }
-            const productsResponse = await ProductApi.getAll(params);
+            const productsResponse = await ProductApi.getMany(params);
             setProduct(productsResponse.data);
-            console.log(productsResponse.data);
+            // console.log(productsResponse.data);
         }catch(e){
             console.log(e);
         }

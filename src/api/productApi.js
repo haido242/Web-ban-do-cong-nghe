@@ -1,25 +1,29 @@
 import axiosClient from "./axiosClient";
 const ProductApi = {
-    getAll: (params) => {
+    getAll: () => {
+        const url = `/api/Product`
+        return axiosClient.get(url);
+    },
+    getMany: (params) => {
         const url = `/Product`;
         return axiosClient.get(url, {params});
     },
     get: (id) => {
-        const url = `/Product/${id}`;
+        const url = `/api/Product/${id}`;
         return axiosClient.get(url);
     },
     delete: (id) => {
-        const url = `/Product/id?id=${id}`;
+        const url = `/api/Product/id?id=${id}`;
         return axiosClient.delete(url);
     },
     // post data
     add: (data) => {
-        const url = '/Product';
+        const url = '/api/Product';
         return axiosClient.post(url, data);
     },
     // update data
     update: (data) => {
-        const url = '/Product';
+        const url = '/api/Product';
         return axiosClient.put(url, data);
     },
 

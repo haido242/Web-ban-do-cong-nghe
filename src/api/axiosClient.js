@@ -9,6 +9,7 @@ const axiosClient = axios.create({
         "content-type": "application/json",
         'charset': 'utf-8',
     },
+    
     paramsSerializer: params => queryString.stringify(params),
 });
 axiosClient.interceptors.request.use(async (config) => {
@@ -26,5 +27,5 @@ axiosClient.interceptors.response.use(
         // Handle errors
         throw error;
     }
-);
+    );
 export default axiosClient;

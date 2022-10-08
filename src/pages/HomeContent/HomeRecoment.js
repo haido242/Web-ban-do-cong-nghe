@@ -12,9 +12,9 @@ export default function HomeRecoment(){
                     PageNumber: 1,
                     PageSize: 3
                 }
-                const productsResponse = await ProductApi.getAll(params);
+                const productsResponse = await ProductApi.getMany(params);
                 setProduct(productsResponse.data);
-                console.log(productsResponse.data);
+                // console.log(productsResponse.data);
             }catch(e){
                 console.log(e);
             }
