@@ -73,7 +73,7 @@ return (
                                             <i className='bx bxs-star' ></i>
                                             <i className='bx bxs-star' ></i>
                                         </div>
-                                        <Link className="section-3-sub-2-product" to = {item.id}>
+                                        <Link className="section-3-sub-2-product" to = {`/${item.id}`}>
                                             {item.productName}
                                         </Link>
                                         <h4 className="section-3-sub-2-coin">

@@ -1,17 +1,35 @@
 import './Detail.css';
-
+import { useState, useEffect } from 'react';
+import ProductApi from '../../api/productApi';
+import { useParams } from 'react-router-dom';
 export default function DetailProduct(props){
+    let productId  = useParams();
+    const [product, setProduct] = useState([]);
+    useEffect(() =>{
+
+    const Product = ProductApi.get(productId.id);
+    // console.log();
+    // var product;
+    Product.then((res) => {
+        setProduct(res)
+        // console.log(res);
+        return product;
+    })
+}, [])
+console.log(product);
     return (
         <div className="Detail">
             <div className="temp"/>
             <div className="section-1-2">
                 <div className="section-1 col-42">
-                    <img src="/assets/img/section-4/6-540x540.jpg" alt=""/>
+                    <img src={product.urlImage} alt=""/>
                 </div>
                 <div className="section-2 col-58 padding-l40-r40">
+                    <div className = "container">
                     <div className="section-2-product-name">
-                        <h2>Xiaomi Mi Mix 2</h2>
+                        <h2>{product.productName}</h2>
                     </div>
+
                     <div className="star-4 padding-t14-b14">
                         <i className='bx bxs-star' ></i>
                         <i className='bx bxs-star' ></i>
@@ -20,22 +38,11 @@ export default function DetailProduct(props){
                         <i className='bx bxs-star' ></i>
                     </div>
                     <div className="section-2-price">
-                        <h3>$55.00</h3>
+                        <h3>${product.price}</h3>
                     </div>
                     <div className="section-2-description">
                         <p>
-                            Xiaomi Mi MIX 2 mobile was launched in September 
-                            2017. The phone comes with a 5.99-inch touchscreen display 
-                            with a resolution of 1080x2160 pixels at a pixel density of 
-                            403 pixels per inch (ppi). Xiaomi Mi MIX 2 is powered by an 
-                            octa-core Qualcomm Snapdragon 835 processor. It comes with 
-                            6GB of RAM. The Xiaomi Mi MIX 2 runs Android and is powered 
-                            by a 3400mAh non-removable battery.
-                            <br/>
-                            As far as the cameras are concerned, 
-                            the Xiaomi Mi MIX 2 on the rear packs 12-megapixel 
-                            camera. It sports a 5-megapixel camera on the front 
-                            for selfies.
+                            {product.description}
                         </p>
                     </div>
                     <div className="section-2-buy-box">
@@ -44,6 +51,7 @@ export default function DetailProduct(props){
                         <div className="section-2-cart">
                             <a href="#">add to cart</a>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>

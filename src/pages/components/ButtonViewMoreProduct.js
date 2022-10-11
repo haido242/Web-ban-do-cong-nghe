@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './ButtonViewMoreProduct.css'
 
 export default function ButtonViewMoreProduct() {
     return (

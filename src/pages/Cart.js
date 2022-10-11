@@ -6,7 +6,7 @@ export default function CartPage(){
         listCart.push(JSON.parse(localStorage.getItem('cart'))[i]);
     }
     // console.log(listCart);
-    const [totalPrice, setTotalPrice] = useState(0);
+    // const [totalPrice, setTotalPrice] = useState(0);
     let sum = 0;
     let priceOfCart = (sumValuePrice)=>{
         sum += sumValuePrice
@@ -46,7 +46,7 @@ export default function CartPage(){
                     </li>
                     <li >
                         <p>${item.product.price * item.quantity}</p>
-                        {priceOfCart(item.product.price * item.quantity)}
+                        {`${priceOfCart(item.product.price * item.quantity)}`}
                     </li>
                 </ul>
              </div>
