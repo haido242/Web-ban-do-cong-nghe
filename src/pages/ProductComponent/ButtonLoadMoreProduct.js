@@ -6,8 +6,8 @@ export default function ButtonViewMoreProduct(){
     
     return (
         <div className="loadProduct">
-            <button onClick={this.loadProduct}>More</button>
-            </div>
+            <button onClick={loadProduct}>More</button>
+        </div>
     )
     
 }

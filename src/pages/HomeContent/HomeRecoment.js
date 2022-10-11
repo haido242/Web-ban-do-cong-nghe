@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ProductApi from "../../api/productApi";
 import ButtonViewMoreProduct from ".././components/ButtonViewMoreProduct";
+import {Routes, Route, Link} from 'react-router-dom';
+
 
 export default function HomeRecoment(){
     
@@ -14,22 +16,41 @@ export default function HomeRecoment(){
                 }
                 const productsResponse = await ProductApi.getMany(params);
                 setProduct(productsResponse.data);
-                // console.log(productsResponse.data);
             }catch(e){
                 console.log(e);
             }
-            console.log("product: "+product);
-            console.warn(product);
         }
         fetchProductList();
     }, [])
+    let cart = [];
+    const addToCart = async (id) => {
+        let storage = localStorage.getItem('cart');
+        if(storage){
+            cart = JSON.parse(storage);
+        }
+        let product = await ProductApi.get(id);
+        let item = cart.find(c => c.product.id == id)
+            if(item){
+                item.quantity++;
+            }
+            else{
+                cart.push({
+                    product: product,
+                    quantity: 1
+                })
+            }
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+    }
+        
+
     return (
         <div className="home-recoment">
                             <h1>New Items</h1>
             <div className="section-3-sub-2 padding-t60">
                 <div className="max-width-1000 section-3-sub-2-flex" >
-                    {product.map((item, index) => 
-                        <div className="col-30 new-item"key={index}>
+                    {product.map((item) => 
+                        <div className="col-30 new-item"key={item.id}>
                             <div className="mr-l14-r14">
                                 <div className="section-3-sub-2-items">
                                     <div className="sale-btn">New!</div>
@@ -42,17 +63,13 @@ export default function HomeRecoment(){
                                             <i className='bx bxs-star' ></i>
                                             <i className='bx bxs-star' ></i>
                                         </div>
-                                        <h4 className="section-3-sub-2-product">
+                                        <Link className="section-3-sub-2-product" to ={item.id}>
                                             {item.productName}
-                                        </h4>
+                                        </Link>
                                         <h4 className="section-3-sub-2-coin">
                                             ${item.price}
                                         </h4>
-                                        <div className="section-3-sub-2-cart">
-                                            <a className="add-to-cart-btn" href="#">
-                                                add to cart
-                                            </a>
-                                        </div>
+                                        <button className="add-to-cart-btn" onClick={() => addToCart(item.id)}> add to cart</button>
                                     </div>
                                 </div>
                             </div>
@@ -60,8 +77,8 @@ export default function HomeRecoment(){
                         )}
                 </div>
                 </div>
-            <div className="temp"></div>
             <ButtonViewMoreProduct/>
+            <div className="temp"></div>
         </div>
     );
 }

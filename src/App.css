@@ -29,6 +29,7 @@ nav{
   background-color: #fff;
   width: 100%;
   padding-left: 20%;
+  border-bottom: 1px solid #e5e5e5;
 }
 /* common (dung chung) */
 .col-30 {
@@ -133,3 +134,56 @@ nav{
 .temp{
   height:100px;
 }
+/* nav */
+.nav-container {
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+
+  padding: 20px 0;
+}
+.nav-header{
+  z-index: 100;
+  background-color: #fff;
+  width: 100%;
+}
+.nav-header ul{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20%;
+}
+.nav-header .input-form{
+  width: 50%;
+  height: 46px;
+  border: 1px solid #2a43d1;
+  border-radius: 23px;
+  padding: 0 20px;
+} 
+.nav-header .input-form button{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+  font-size: 24px;
+width: 46px;
+}
+
+.nav-header .input-form input{
+  width: 90%;
+  height: 100%;
+  border: none;
+
+}
+.nav-header .input-form input:focus{
+  outline: none;
+}
+.nav-header .cart-btn i{
+  font-size: 52px;
+}
+.nav-header .cart-btn{
+  display: inline-block;
+}
+.nav-header .cart-quantity{display:inline-block}

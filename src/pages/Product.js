@@ -1,6 +1,7 @@
 import ProductApi from "../api/productApi";
 import './Home.css';
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 export default function ProductPage() {
     // function ButtonLoadProduct(){
     //     return (
@@ -23,8 +24,8 @@ export default function ProductPage() {
                 PageNumber: paramPageNumber,
                 PageSize: paramPageSize
             }
-            const productsResponse = await ProductApi.getMany(params);
-            setProduct(productsResponse.data);
+            const productsResponse = await ProductApi.getAll(params);
+            setProduct(productsResponse);
             // console.log(productsResponse.data);
         }catch(e){
             console.log(e);
@@ -33,8 +34,28 @@ export default function ProductPage() {
     fetchProductList()
     // loadProduct()
     console.log("product app: "+product);
-}, [])   
-    return (
+    }, [])
+let cart = [];
+    const addToCart = async (id) => {
+        let storage = localStorage.getItem('cart');
+        if(storage){
+            cart = JSON.parse(storage);
+        }
+        let product = await ProductApi.get(id);
+        let item = cart.find(c => c.product.id == id)
+            if(item){
+                item.quantity++;
+            }
+            else{
+                cart.push({
+                    product: product,
+                    quantity: 1
+                })
+            }
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+    }
+return (
         <div className="home-recoment">
             <div className="section-3-sub-2 padding-t60">
                 <div className="max-width-1000 section-3-sub-2-flex" >
@@ -42,7 +63,7 @@ export default function ProductPage() {
                         <div className="col-30 new-item"key={index}>
                             <div className="mr-l14-r14">
                                 <div className="section-3-sub-2-items">
-                                    <div className="sale-btn">New!</div>
+                                    {/* <div className="sale-btn">New!</div> */}
                                     <img src={item.urlImage}/>
                                     <div className="section-3-sub-2-content">
                                         <div className="star">
@@ -52,16 +73,16 @@ export default function ProductPage() {
                                             <i className='bx bxs-star' ></i>
                                             <i className='bx bxs-star' ></i>
                                         </div>
-                                        <h4 className="section-3-sub-2-product">
+                                        <Link className="section-3-sub-2-product" to = {item.id}>
                                             {item.productName}
-                                        </h4>
+                                        </Link>
                                         <h4 className="section-3-sub-2-coin">
                                             ${item.price}
                                         </h4>
                                         <div className="section-3-sub-2-cart">
-                                            <a className="add-to-cart-btn" href="#">
+                                            <button className="add-to-cart-btn" onClick={() => addToCart(item.id)}>
                                                 add to cart
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
