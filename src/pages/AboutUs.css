@@ -1,0 +1,66 @@
+.content{
+    margin-top: 164px;
+}
+
+.content__body{
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-bottom: 20px;
+}
+
+.content__about--title{
+    color: #3452ff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.purpose--Firstword{
+    font-size: 17px;
+    font-weight: 700;
+    padding-left: 10px;
+}
+
+.aboutUs__Avatar{
+    width: 100px;
+
+    height: 110px;
+    padding-top: 3px;
+    padding-left: 3px;
+    padding-bottom: 2px;
+    padding-right: 110px;
+    border-right: 1px solid #000;
+    border-radius: 10px 0 0 10px;
+}
+.aboutUs__Avatar img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.aboutUs__Avatar_Image{
+    width: 100px;
+    border-radius: 10px 0 0 10px;
+}
+
+.aboutUs__Info{
+    display: flex;
+    border: 1px solid #000;
+    width: 700px;
+    height: 110px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.aboutUs__Information{
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.aboutUs__Information--mainInfo{
+    font-size: 20px;
+}
+.aboutUs__Information--furtherInfo{
+    color: rgb(105, 105, 105);
+}

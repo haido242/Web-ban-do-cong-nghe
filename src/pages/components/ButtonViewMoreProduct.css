@@ -1,0 +1,22 @@
+.button-view-more-product{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.button-view-more-product button{
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(52 82 255);
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+    border: none;
+}
+.button-view-more-product button a{
+    display: block;
+    color: #fff;
+    width: 200px;
+    font-size: 16px;
+    height: 40px;
+}

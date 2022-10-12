@@ -1,5 +1,4 @@
 import {Link} from 'react-router-dom'
-import Cart from '../Cart'
 export default function NavHeader(){
     return(
         <div className="nav-header">

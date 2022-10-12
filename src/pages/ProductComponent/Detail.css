@@ -7,9 +7,17 @@
   display: flex;
   /* justify-content: space-between; */
 }
+.Detail {
+  width: 80%;
+  margin: 0 auto;
 
+}.Detail img {
+  width: 400px;
+  height: 500px;
+  object-fit: cover;
+}
 .section-1 img {
-  width: 40vw;
+  /* width: 40vw; */
   border: 1px solid #ccc;
   border-radius: 14px;
 }
