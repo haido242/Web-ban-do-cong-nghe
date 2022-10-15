@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Poppins;
+  /* font-family: Poppins; */
 }
 *::selection {
   color: #fff;
@@ -11,7 +11,7 @@
 }
 
 body {
-  font-family: 'Heebo', Arial, Helvetica, 'Nimbus Sans L', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 li {
@@ -219,4 +219,14 @@ width: 46px;
 
 .footer-items p a:hover {
   opacity: 1;
+}
+.cart-quantity-value{
+  /* position: absolute; */
+  /* top: 0; */
+  /* right: 0; */
+  /* background-color: #2a43d1; */
+  color: rgb(255, 0, 0);
+  font-size: 12px;
+  /* padding: 0 6px; */
+  border-radius: 6px;
 }

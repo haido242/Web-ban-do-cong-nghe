@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProductApi from "../../api/productApi";
 import ButtonViewMoreProduct from ".././components/ButtonViewMoreProduct";
-import {Routes, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 export default function HomeRecoment(){
@@ -53,7 +53,7 @@ export default function HomeRecoment(){
                         <div className="col-30 new-item"key={item.id}>
                             <div className="mr-l14-r14">
                                 <div className="section-3-sub-2-items">
-                                    <div className="sale-btn">New!</div>
+                                    <div className="sale-btn">Mới!</div>
                                     <img src={item.urlImage}/>
                                     <div className="section-3-sub-2-content">
                                         <div className="star">
@@ -67,9 +67,9 @@ export default function HomeRecoment(){
                                             {item.productName}
                                         </Link>
                                         <h4 className="section-3-sub-2-coin">
-                                            ${item.price}
+                                            {item.price *22}.000 VND
                                         </h4>
-                                        <button className="add-to-cart-btn" onClick={() => addToCart(item.id)}> add to cart</button>
+                                        <button className="add-to-cart-btn" onClick={() => addToCart(item.id)}> Thêm vào giỏ hàng</button>
                                     </div>
                                 </div>
                             </div>

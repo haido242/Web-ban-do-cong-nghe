@@ -22,19 +22,19 @@ function App() {
         <nav>
             <ul>
               <li className= "menu-item">
-                <Link to="/">Home</Link>
+                <Link to="/">Trang chủ</Link>
               </li>
               <li className= "menu-item">
-                <Link to="/about">About</Link>
+                <Link to="/about">Liên hệ</Link>
               </li>
               {/* <li className= "menu-item">
                 <Link to="/contact">Contact</Link>
               </li> */}
               <li className= "menu-item">
-                <Link to="/news">News</Link>
+                <Link to="/news">Tin tức</Link>
               </li>
               <li className= "menu-item">
-                <Link to="/product">All Product</Link>
+                <Link to="/product">Tất cả sản phẩm</Link>
               </li>
             </ul>
 

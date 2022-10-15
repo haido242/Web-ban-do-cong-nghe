@@ -1,5 +1,10 @@
 import {Link} from 'react-router-dom'
+import {useState, useEffect} from 'react'
 export default function NavHeader(){
+    const [quantityItem, setQuantityItem]= useState();
+    useEffect(() => {
+        setQuantityItem(JSON.parse(localStorage.getItem('cart')).length);
+    })
     return(
         <div className="nav-header">
             <ul>
@@ -9,7 +14,7 @@ export default function NavHeader(){
                     </Link>
                 </li>
                 <li className = "input-form">
-                    <input type="text" placeholder="Search for product"/>
+                    <input type="text" placeholder="Tìm kiếm sản phẩm"/>
                     <button className = "btn-search">
                         <i className='bx bx-search'></i>
                     </button>
@@ -21,8 +26,8 @@ export default function NavHeader(){
                     </Link>
                     <div className="cart-quantity">
 
-                        <p>Your cart</p>
-                        <p>${}</p>
+                        <p>Giỏ hàng</p>
+                        <p className="cart-quantity-value"> {quantityItem}</p>
                     </div>
                 </li>
             </ul>

@@ -77,11 +77,11 @@ return (
                                             {item.productName}
                                         </Link>
                                         <h4 className="section-3-sub-2-coin">
-                                            ${item.price}
+                                            {item.price *22}.000 VND
                                         </h4>
                                         <div className="section-3-sub-2-cart">
                                             <button className="add-to-cart-btn" onClick={() => addToCart(item.id)}>
-                                                add to cart
+                                                Thêm vào giỏ hàng
                                             </button>
                                         </div>
                                     </div>
