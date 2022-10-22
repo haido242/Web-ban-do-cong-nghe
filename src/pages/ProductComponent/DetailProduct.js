@@ -2,17 +2,17 @@ import './Detail.css';
 import { useState, useEffect } from 'react';
 import ProductApi from '../../api/productApi';
 import { useParams } from 'react-router-dom';
+import ButtonAddToCart from '.././components/ButtonAddToCart';
 export default function DetailProduct(props){
+    
     let productId  = useParams();
     const [product, setProduct] = useState([]);
     useEffect(() =>{
 
     const Product = ProductApi.get(productId.id);
-    // console.log();
-    // var product;
+
     Product.then((res) => {
         setProduct(res)
-        // console.log(res);
         return product;
     })
 }, [])
@@ -48,9 +48,7 @@ console.log(product);
                     <div className="section-2-buy-box">
                         <input className="section-2-input" type="number" id="" step="1" 
                         min="1" value="1" size="4" title="Qty" inputmode="numeric" />
-                        <div className="section-2-cart">
-                            <a href="#">add to cart</a>
-                        </div>
+                        <ButtonAddToCart idProduct= {product.id}/>
                     </div>
                     </div>
                 </div>

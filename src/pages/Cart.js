@@ -1,23 +1,19 @@
 import './Cart.css';
 import {useState} from 'react';
+import ButtonRemoveToCart from './components/ButtonRemoveToCart';
 export default function CartPage(){
     let listCart = []
     for (let i = 0; i <JSON.parse(localStorage.getItem('cart')).length; i++) {
         listCart.push(JSON.parse(localStorage.getItem('cart'))[i]);
     }
-    // console.log(listCart);
-    // const [totalPrice, setTotalPrice] = useState(0);
+    
     let sum = 0;
-    let priceOfCart = (sumValuePrice)=>{
-        sum += sumValuePrice
-    return sum;}
-    let removeItem = (id) =>{
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        let index = cart.findIndex(c => c.product.id == id);
-        cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        window.location.reload();
+    for (let i = 0; i < listCart.length; i++) {
+        sum += listCart[i].product.price * listCart[i].quantity;
     }
+    console.log(listCart)
+
+    
     return (
         <div className="cart-page">
             <div className = "temp"/>
@@ -40,13 +36,11 @@ export default function CartPage(){
                         <input type="number" placeholder="1" min="1" value={item.quantity} />
                     </li>
                     <li className = "item-remove">
-                        <button className = "btn-remove" onClick={removeItem} >
-                        <i className='bx bx-x'></i>
-                        </button>
+                        <ButtonRemoveToCart idProduct={item.index}/>
                     </li>
                     <li >
                         <p>${item.product.price * item.quantity}</p>
-                        {`${priceOfCart(item.product.price * item.quantity)}`}
+                        {/* {`${priceOfCart(item.product.price * item.quantity)}`} */}
                     </li>
                 </ul>
              </div>

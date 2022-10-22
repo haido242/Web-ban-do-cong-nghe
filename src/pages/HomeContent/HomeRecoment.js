@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProductApi from "../../api/productApi";
 import ButtonViewMoreProduct from ".././components/ButtonViewMoreProduct";
 import {Link} from 'react-router-dom';
+import ButtonAddToCart from ".././components/ButtonAddToCart";
 
 
 export default function HomeRecoment(){
@@ -69,7 +70,7 @@ export default function HomeRecoment(){
                                         <h4 className="section-3-sub-2-coin">
                                             {item.price *22}.000 VND
                                         </h4>
-                                        <button className="add-to-cart-btn" onClick={() => addToCart(item.id)}> Thêm vào giỏ hàng</button>
+                                        <ButtonAddToCart idProduct={item.id}/>
                                     </div>
                                 </div>
                             </div>
